@@ -174,15 +174,11 @@ class AuthUser implements UserInterface, \Serializable
         $this->email = $email;
     }
 
-    public function eraseCredentials()
-    {
-    }
-
     /**
      * @see \Serializable::serialize()
      * @return string
      */
-    public function serialize()
+    public function serialize(): string
     {
         return serialize([
             $this->id,
@@ -228,5 +224,12 @@ class AuthUser implements UserInterface, \Serializable
     public function isExpired(): bool
     {
         return !$this->isActive();
+    }
+
+    /**
+     *
+     */
+    public function eraseCredentials():void
+    {
     }
 }

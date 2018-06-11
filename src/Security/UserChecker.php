@@ -14,7 +14,7 @@ class UserChecker implements UserCheckerInterface
      * @param UserInterface $user
      * @throws \App\Exception\AccountDeletedException
      */
-    public function checkPreAuth(UserInterface $user)
+    public function checkPreAuth(UserInterface $user): void
     {
         if (!$user instanceof AuthUser) {
             return;
@@ -28,7 +28,7 @@ class UserChecker implements UserCheckerInterface
      * @param UserInterface $user
      * @throws \Exception
      */
-    public function checkPostAuth(UserInterface $user)
+    public function checkPostAuth(UserInterface $user): void
     {
         if (!$user instanceof AuthUser) {
             return;
