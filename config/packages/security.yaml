@@ -1,0 +1,22 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        db_provider:
+            entity:
+                class: App\Entity\AuthUser
+                property: username
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern:    ^/
+            http_basic: ~
+            provider: db_provider
+            user_checker: App\Security\UserChecker
+    access_control:
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+    encoders:
+        App\Entity\AuthUser:
+            algorithm: bcrypt

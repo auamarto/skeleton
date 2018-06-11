@@ -1,0 +1,15 @@
+api_platform:
+    title: 'Skeleton API'
+    description: 'Basic skeleton project to create rapid crud.'
+    version: '1.0.0'
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    oauth:
+        enabled: true
+        clientId: '%env(resolve:CLIENT_ID)%'
+        clientSecret: '%env(resolve:CLIENT_SECRET)%'
+        type: 'oauth2'
+        flow: 'application'
+        tokenUrl: '/oauth/v2/token'
+        authorizationUrl: '/oauth/v2/auth'
+        scopes: []
