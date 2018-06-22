@@ -1,3 +1,6 @@
+## CONFIG
+JWT: https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#installation
+
 ## Web Services
 ````
 App http://localhost/api
